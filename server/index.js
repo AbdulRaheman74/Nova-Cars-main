@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import carRoutes from "./routes/carRoute.js";
 import cors from "cors";
 import suvRoutes from "./routes/suvRoute.js";
+import tracksRoute from "./routes/tracksRoute.js";
+import vansRoute from "./routes/vansRoute.js";
 
 
 const app=express();
@@ -17,6 +19,8 @@ const dbName=process.env.DBNAME
 
 app.use("/api/cars", carRoutes)
 app.use("/api/suvs",suvRoutes)
+app.use("/api/tracks",tracksRoute)
+app.use("/api/vans",vansRoute)
 
 connectDB(dbUrl,dbName)
  app.listen(6060,()=>{
